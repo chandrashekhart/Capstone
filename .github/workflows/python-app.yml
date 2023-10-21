@@ -16,7 +16,7 @@ jobs:
       - name: Install requests library
         run: pip install requests
       - name: execute py script # run main.py
-        run: python my_Python_script.py
+        run: python .github/workflows/my_Python_script.py
         #env :
         #    git_token :  ${{ secrets.GIT_TOKEN }}
         #    git_url :  ${{ secrets.GITHUB_REPOSITORY }}
