@@ -10,7 +10,7 @@ data = {
 print(data)
  #this is actual url
 #url = requests.post(url="http://13.233.5.47:8000/trigger-script",json=data)
-url = requests.post(url="https://13.233.5.47:8000/trigger-script",json=data)
+url = requests.post(url="http://13.233.5.47:8000/trigger-script",json=data)
 print(url.text)
 print("hello")
 
