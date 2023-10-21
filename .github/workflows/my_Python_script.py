@@ -1,23 +1,13 @@
-
-import os
 import requests
-
-api_url = os.environ.get('API_URL')
-repository_url = os.popen('git config --get remote.origin.url').read().strip()
-
-payload = {
-    'repository_url': repository_url
+import os
+import json
+# print(os.__dict__)
+# print(os.environ['git_url'])
+url = f"{os.environ['GITHUB_SERVER_URL']}/{os.environ['GITHUB_REPOSITORY']}"
+data = {
+  "url" : url
 }
+print(data)
+ #this is actual url
+#url = requests.post(url="http://13.233.5.47:8000/trigger-script",json=data)
 
-headers = {
-    'Content-Type': 'application/json',
-    # Add any other headers as needed
-}
-
-response = requests.post(api_url, json=payload, headers=headers)
-
-if response.status_code == 200:
-    print("API request was successful.")
-else:
-    print(f"API request failed with status code {response.status_code}.")
-    print(response.text)
