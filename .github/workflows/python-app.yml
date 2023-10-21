@@ -1,4 +1,4 @@
-name: run python-app.py
+name: run my_Python_script.py
 
 on: push
 
