@@ -1,4 +1,4 @@
-name: run my_Python_script.py
+name: my_Python_script.py
 
 on: push
 
@@ -9,17 +9,16 @@ jobs:
 
       - name: Checkout Code
         uses: actions/checkout@v2
-             - name: setup python
+      - name: setup python
         uses: actions/setup-python@v2
         with:
           python-version: '3.8' # install the python version needed
       - name: Install requests library
         run: pip install requests
       - name: execute py script # run main.py
-    
         run: python my_Python_script.py
-        env :
-            git_token :  ${{ secrets.GIT_TOKEN }}
-            git_url :  ${{ secrets.GITHUB_REPOSITORY }}
+        #env :
+        #    git_token :  ${{ secrets.GIT_TOKEN }}
+        #    git_url :  ${{ secrets.GITHUB_REPOSITORY }}
 
 
