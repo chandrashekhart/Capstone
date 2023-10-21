@@ -1,26 +1,25 @@
-name: Trigger Python Script on Git Push
+name: run main.py
 
-on:
-  push:
-    branches:
-      - '*'
+on: push
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check Out Code
-        uses: actions/checkout@v2
 
-      - name: Set up Python
+      - name: Checkout Code
+        uses: actions/checkout@v2
+             - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.x
+          python-version: '3.8' # install the python version needed
+      - name: Install requests library
+        run: pip install requests
+      - name: execute py script # run main.py
+    
+        run: python my_Python_script.py
+        env :
+            git_token :  ${{ secrets.GIT_TOKEN }}
+            git_url :  ${{ secrets.GITHUB_REPOSITORY }}
 
-      - name: Run Python Script
-        run: |
-          python my_Python_script.py
-        env:
-          API_URL: 'https://your-api-endpoint.com'  # Replace with your API endpoint
 
