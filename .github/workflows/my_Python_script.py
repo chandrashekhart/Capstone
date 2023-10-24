@@ -10,9 +10,9 @@ data = {
 print(data)
  #this is actual url
 #url = requests.post(url="http://13.233.5.47:8000/trigger-script",json=data)
-url = requests.post(url="http://13.233.5.47:8000/trigger-script",json=data)
+url = requests.post(url="http://52.66.181.226:8000/trigger-script",json=data)
 print(url.text)
-print("hello")
+print("Executed the trigger-script HTTP POST API call successfully")
 
 
 
