@@ -1,4 +1,3 @@
-Hello world
-Second time testing after making repo as public
-third time testing after making changes to EC2 Capstone
-testing final deployment again
+Editing this file and commiting changes will trigger Git commit and hence the python script which has API call will be called by GitHub actions workflow
+
+Editing this at 5:41pm
